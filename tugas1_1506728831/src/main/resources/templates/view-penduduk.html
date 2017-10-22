@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Penduduk by NIK</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<script src="/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    	<div th:replace="fragments/fragment :: header"></div>
+		<br/>
+		<div class="container-fluid text-center">
+  			<div class="row content">
+   				<div class="col-sm-4"></div>
+   				<div class="col-sm-8 text-left">
+				<h5 th:text="'Lihat Data Penduduk - ' + ${penduduk.nik}"></h5>
+		       	<br/>
+		       	<div class="row">
+		       		<div class="col-4">
+		       			<h6>NIK</h6>
+		       			<h6>Nama</h6>
+		       			<h6>Tempat/Tanggal Lahir</h6>
+		       			<h6>Alamat</h6>
+		       			<h6>RT/RW</h6>
+		       			<h6>Kelurahan/Desa</h6>
+		       			<h6>Kecamatan</h6>
+		       			<h6>Kota</h6>
+		       			<h6>Golongan Darah</h6>
+		       			<h6>Agama</h6>
+		       			<h6>Status Perkawinan</h6>
+		       			<h6>Pekerjaan</h6>
+		       			<h6>Kewarganegaraan</h6>
+		       			<h6>Status Kematian</h6>
+		       		</div>
+		       		<div class="col-4">
+		       			<h6 th:text="${penduduk.nik}">NIK Penduduk</h6>
+		       			<h6 th:text="${penduduk.nama}">Nama Penduduk</h6>
+		       			<h6 th:text="${penduduk.tempat_lahir} + ', ' + ${penduduk.tanggal_lahir}">TTL Penduduk</h6>
+		       			<h6 th:text="${keluarga.alamat}">Alamat Penduduk</h6>
+		       			<h6 th:text="${keluarga.rt} + '/' + ${keluarga.rw}">RT/RW Penduduk</h6>
+		       			<h6 th:text="${kelurahan.nama_kelurahan}">Kelurahan Penduduk</h6>
+		       			<h6 th:text="${kecamatan.nama_kecamatan}">Kecamatan Penduduk</h6>
+		       			<h6 th:text="${kota.nama_kota}">Kota Penduduk</h6>
+		       			<h6 th:text="${penduduk.golongan_darah}">Golongan Darah Penduduk</h6>
+		       			<h6 th:text="${penduduk.agama}">Agama Penduduk</h6>
+		       			<h6 th:text="${penduduk.status_perkawinan}">Status Perkawinan Penduduk</h6>
+		       			<h6 th:text="${penduduk.pekerjaan}">Pekerjaan Penduduk</h6>
+		       			<h6 th:if="${penduduk.is_wni=1}">WNI</h6>
+				       	<h6 th:unless="${penduduk.is_wni=1}">WNA</h6>
+				       	<h6 th:if="${penduduk.is_wafat=1}">Hidup</h6>
+				       	<h6 th:unless="${penduduk.is_wafat=1}">Mati</h6>
+		       		</div>
+		       	</div>
+       			</div>
+				<div class="col-sm-4"></div>		
+			</div>
+		</div>
+    </body>
+</html>

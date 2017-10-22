@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:replace="fragments/fragment :: head"></title>
+		<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+		<script src="/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div th:replace="fragments/fragment :: header"></div>
+		<br/>
+		<h2>Sukses !</h2>
+		<p th:text="'Keluarga dengan NKK ' + ${keluarga.nomor_kk} + ' berhasil ditambahkan'"></p>
+	</body>
+</html>
